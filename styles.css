@@ -50,11 +50,11 @@ a {
   background: rgba(247, 247, 245, 0.82);
   border-bottom: 1px solid transparent;
   backdrop-filter: blur(18px);
-  transition: border-color 180ms ease, padding 180ms ease;
+  transition: border-color 180ms ease, background 180ms ease;
 }
 
 .site-header.is-scrolled {
-  padding-block: 18px;
+  background: rgba(247, 247, 245, 0.94);
   border-color: var(--line);
 }
 
