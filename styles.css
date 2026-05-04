@@ -38,6 +38,148 @@ a {
   text-decoration: none;
 }
 
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(124, 77, 255, 0.14), transparent 21%),
+    #000;
+  cursor: pointer;
+  animation: intro-exit 680ms cubic-bezier(0.7, 0, 0.84, 0) 2850ms forwards;
+}
+
+.site-intro.is-done {
+  animation: intro-exit 320ms ease forwards;
+}
+
+.intro-logo {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(92px, 12vw, 132px) auto;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 28px);
+  transform: translateY(-3vh);
+}
+
+.intro-mark {
+  position: relative;
+  z-index: 2;
+  width: clamp(92px, 12vw, 132px);
+  height: clamp(60px, 7.8vw, 88px);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(14px) scale(0.9);
+  animation: intro-mark-in 700ms cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
+}
+
+.intro-mark img {
+  width: clamp(318px, 41vw, 456px);
+  max-width: none;
+  filter: invert(1) grayscale(1) brightness(2.1);
+}
+
+.intro-beams {
+  position: absolute;
+  top: 50%;
+  left: clamp(72px, 9.3vw, 102px);
+  z-index: 1;
+  width: clamp(180px, 28vw, 360px);
+  height: clamp(74px, 9vw, 126px);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.intro-beams span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), var(--beam), transparent);
+  border-radius: 999px;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--beam) 48%, transparent);
+  opacity: 0;
+  transform: rotate(var(--angle)) scaleX(0);
+  transform-origin: left;
+  animation: intro-beam 940ms cubic-bezier(0.16, 1, 0.3, 1) var(--delay) forwards;
+}
+
+.intro-wordmark {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  color: #fff;
+  font-size: clamp(30px, 5vw, 62px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.intro-wordmark span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+}
+
+.intro-wordmark span:first-child {
+  animation: intro-type 620ms cubic-bezier(0.16, 1, 0.3, 1) 1320ms forwards;
+}
+
+.intro-wordmark span:last-child {
+  animation: intro-type 700ms cubic-bezier(0.16, 1, 0.3, 1) 1530ms forwards;
+}
+
+@keyframes intro-mark-in {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes intro-beam {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle)) scaleX(0);
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.82;
+    transform: rotate(var(--angle)) scaleX(1);
+  }
+}
+
+@keyframes intro-type {
+  from {
+    opacity: 0;
+    transform: translateY(0.24em);
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes intro-exit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(1.025);
+  }
+}
+
 .site-header {
   position: fixed;
   top: 0;

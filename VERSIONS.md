@@ -7,6 +7,7 @@ This project uses Git tags as return points for visual directions.
 - `v01-before-motion-prism` - clean prism landing before applying the scroll-motion direction.
 - `v02-motion-prism` - big prism direction, animated compact header, scroll progress line, title and block reveals.
 - `v03-prism-accent-flow` - Prism Accent color direction, higher hero prism, subtle ray glints, montage frame section, interactive work flow list.
+- `v04-prism-intro` - entrance intro with prism mark, animated rays, PRISM PRODUCTION wordmark, then transition into the landing page.
 
 ## How to return
 

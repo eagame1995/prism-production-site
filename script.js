@@ -1,5 +1,6 @@
 const header = document.querySelector("[data-header]");
 const progress = document.querySelector("[data-progress]");
+const intro = document.querySelector("[data-intro]");
 const form = document.querySelector("[data-form]");
 const note = document.querySelector("[data-form-note]");
 const revealItems = document.querySelectorAll(
@@ -28,6 +29,30 @@ const updateHeader = () => {
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 window.addEventListener("resize", updateHeader);
+
+if (intro) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let introDone = false;
+
+  const finishIntro = () => {
+    if (introDone) return;
+    introDone = true;
+    intro.classList.add("is-done");
+    window.setTimeout(() => intro.remove(), 420);
+  };
+
+  if (reduceMotion) {
+    finishIntro();
+  } else {
+    window.setTimeout(finishIntro, 3550);
+    intro.addEventListener("click", finishIntro);
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" || event.key === "Enter" || event.key === " ") {
+        finishIntro();
+      }
+    });
+  }
+}
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
