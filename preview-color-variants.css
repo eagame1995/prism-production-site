@@ -217,13 +217,13 @@ body {
 }
 
 .dark .mockup-header img {
-  filter: invert(1) grayscale(1) contrast(1.12);
+  filter: invert(1) hue-rotate(180deg) saturate(1.18) contrast(1.08);
   mix-blend-mode: screen;
 }
 
 .dark .prism-plate img {
-  opacity: 0.88;
-  filter: saturate(0.8) contrast(1.06) drop-shadow(0 24px 46px rgba(255, 255, 255, 0.08));
+  opacity: 1;
+  filter: saturate(1.18) contrast(1.04) drop-shadow(0 24px 46px rgba(255, 255, 255, 0.08));
   mix-blend-mode: normal;
 }
 
@@ -234,6 +234,7 @@ body {
 .cyan-black .prism-plate,
 .greenroom .prism-plate,
 .sunset-chrome .prism-plate {
+  isolation: auto;
   -webkit-mask-image: none;
   mask-image: none;
   transform: translateX(16%);
@@ -422,12 +423,12 @@ body {
 }
 
 .neon-noir .mockup-header img {
-  filter: invert(1) grayscale(1) contrast(1.08);
+  filter: invert(1) hue-rotate(180deg) saturate(1.18) contrast(1.08);
   mix-blend-mode: screen;
 }
 
 .neon-noir .prism-plate img {
-  opacity: 0.9;
+  opacity: 1;
   filter: saturate(1.28) contrast(1.05) drop-shadow(0 28px 58px rgba(247, 45, 157, 0.18));
   mix-blend-mode: normal;
 }
@@ -455,7 +456,7 @@ body {
 .red-room .mockup-header img,
 .cyan-black .mockup-header img,
 .greenroom .mockup-header img {
-  filter: invert(1) grayscale(1) contrast(1.08);
+  filter: invert(1) hue-rotate(180deg) saturate(1.18) contrast(1.08);
   mix-blend-mode: screen;
 }
 
@@ -463,8 +464,8 @@ body {
 .red-room .prism-plate img,
 .cyan-black .prism-plate img,
 .greenroom .prism-plate img {
-  opacity: 0.9;
-  filter: saturate(1.08) contrast(1.04) drop-shadow(0 28px 58px rgba(255, 255, 255, 0.1));
+  opacity: 1;
+  filter: saturate(1.18) contrast(1.04) drop-shadow(0 28px 58px rgba(255, 255, 255, 0.1));
   mix-blend-mode: normal;
 }
 
@@ -615,12 +616,12 @@ body {
 }
 
 .sunset-chrome .mockup-header img {
-  filter: invert(1) grayscale(1) contrast(1.08);
+  filter: invert(1) hue-rotate(180deg) saturate(1.18) contrast(1.08);
   mix-blend-mode: screen;
 }
 
 .sunset-chrome .prism-plate img {
-  opacity: 0.88;
+  opacity: 1;
   filter: sepia(0.08) saturate(1.24) contrast(1.04) drop-shadow(0 28px 58px rgba(255, 186, 73, 0.14));
   mix-blend-mode: normal;
 }
