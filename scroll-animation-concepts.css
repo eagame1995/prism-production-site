@@ -125,8 +125,17 @@ img {
 }
 
 .hero-drop {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(320px, 0.58fr);
+  gap: 5vw;
   min-height: 112vh;
-  padding: 34vh 5vw 10vh;
+  align-items: center;
+  padding: 22vh 5vw 10vh;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow,
@@ -168,6 +177,89 @@ p {
   color: var(--muted);
   font-size: clamp(22px, 2.2vw, 34px);
   line-height: 1.28;
+}
+
+.hero-side {
+  position: relative;
+  min-height: 520px;
+}
+
+.hero-side::before {
+  position: absolute;
+  top: 20%;
+  right: -18%;
+  width: 520px;
+  height: 520px;
+  border: 1px solid var(--line);
+  content: "";
+  transform: rotate(12deg);
+}
+
+.hero-side::after {
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.24), transparent);
+  content: "";
+}
+
+.side-frame {
+  position: absolute;
+  overflow: hidden;
+  background: #111;
+  filter: grayscale(1);
+}
+
+.side-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.86;
+}
+
+.side-frame-a {
+  top: 16%;
+  right: 5%;
+  width: min(360px, 58vw);
+  height: 220px;
+  clip-path: inset(0 0 0 28%);
+  animation: sideFloatA 7s ease-in-out infinite;
+}
+
+.side-frame-b {
+  right: 28%;
+  bottom: 10%;
+  width: min(290px, 46vw);
+  height: 180px;
+  opacity: 0.72;
+  clip-path: inset(0 34% 0 0);
+  animation: sideFloatB 8s ease-in-out infinite;
+}
+
+.side-index {
+  position: absolute;
+  top: 12%;
+  right: 0;
+  display: grid;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+@keyframes sideFloatA {
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes sideFloatB {
+  50% {
+    transform: translateY(18px);
+  }
 }
 
 .scroll-hint {
@@ -410,7 +502,41 @@ p {
   }
 
   .hero-drop {
+    grid-template-columns: 1fr;
     padding: 26vh 20px 10vh;
+  }
+
+  .hero-side {
+    min-height: 280px;
+    margin-top: 28px;
+    overflow: hidden;
+  }
+
+  .hero-side::before {
+    top: 8%;
+    right: -30px;
+    width: 260px;
+    height: 260px;
+  }
+
+  .side-frame-a {
+    top: 20px;
+    right: -18px;
+    width: 240px;
+    height: 150px;
+  }
+
+  .side-frame-b {
+    right: 150px;
+    bottom: 12px;
+    width: 160px;
+    height: 120px;
+  }
+
+  .side-index {
+    top: 28px;
+    right: 8px;
+    gap: 8px;
   }
 
   .panel,
