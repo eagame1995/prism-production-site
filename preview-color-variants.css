@@ -101,6 +101,20 @@ body {
   padding: 18px 0 40px 30px;
 }
 
+.mockup-hero::after {
+  position: absolute;
+  top: 26%;
+  right: -8%;
+  z-index: 1;
+  width: 58%;
+  height: 56%;
+  background: var(--glow, transparent);
+  content: "";
+  filter: blur(36px);
+  opacity: var(--glow-opacity, 0);
+  pointer-events: none;
+}
+
 .mockup-hero div {
   position: relative;
   z-index: 3;
@@ -158,6 +172,8 @@ body {
   --ink: #f6f4ef;
   --muted: #a6a6a0;
   --line: rgba(255, 255, 255, 0.16);
+  --glow: linear-gradient(90deg, rgba(255, 255, 255, 0.26), rgba(10, 167, 232, 0.12), rgba(247, 45, 157, 0.1));
+  --glow-opacity: 0.85;
 }
 
 .dark .mockup-header img {
@@ -166,9 +182,11 @@ body {
 }
 
 .dark .mockup-hero > img {
-  opacity: 0.76;
-  filter: saturate(0.75) contrast(1.1);
-  mix-blend-mode: screen;
+  opacity: 0.88;
+  filter: saturate(0.8) contrast(1.06) drop-shadow(0 24px 46px rgba(255, 255, 255, 0.08));
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .paper {
@@ -349,6 +367,8 @@ body {
     radial-gradient(circle at 82% 35%, rgba(247, 45, 157, 0.24), transparent 30%),
     radial-gradient(circle at 68% 50%, rgba(10, 167, 232, 0.22), transparent 26%),
     #09070d;
+  --glow: linear-gradient(100deg, rgba(247, 45, 157, 0.3), rgba(10, 167, 232, 0.22), rgba(255, 255, 255, 0.08));
+  --glow-opacity: 0.95;
 }
 
 .neon-noir .mockup-header img {
@@ -357,12 +377,12 @@ body {
 }
 
 .neon-noir .mockup-hero > img {
-  opacity: 0.64;
-  filter: saturate(1.42) contrast(1.08) brightness(0.78);
-  mix-blend-mode: screen;
-  clip-path: ellipse(44% 46% at 54% 52%);
-  -webkit-mask-image: radial-gradient(ellipse at 54% 52%, #000 0 42%, transparent 72%);
-  mask-image: radial-gradient(ellipse at 54% 52%, #000 0 42%, transparent 72%);
+  opacity: 0.9;
+  filter: saturate(1.28) contrast(1.05) drop-shadow(0 28px 58px rgba(247, 45, 157, 0.18));
+  mix-blend-mode: normal;
+  clip-path: none;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .neon-noir .mockup-hero button {
@@ -380,6 +400,8 @@ body {
     radial-gradient(circle at 78% 40%, rgba(154, 92, 255, 0.38), transparent 30%),
     radial-gradient(circle at 45% 60%, rgba(247, 45, 157, 0.18), transparent 32%),
     #12091f;
+  --glow: linear-gradient(100deg, rgba(154, 92, 255, 0.36), rgba(247, 45, 157, 0.18), rgba(255, 255, 255, 0.08));
+  --glow-opacity: 0.9;
 }
 
 .ultraviolet .mockup-header img,
@@ -394,11 +416,11 @@ body {
 .red-room .mockup-hero > img,
 .cyan-black .mockup-hero > img,
 .greenroom .mockup-hero > img {
-  opacity: 0.74;
-  filter: saturate(1.2) contrast(1.08) brightness(0.86);
-  mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 46%, transparent 76%);
-  mask-image: radial-gradient(circle at 50% 50%, #000 0 46%, transparent 76%);
+  opacity: 0.9;
+  filter: saturate(1.08) contrast(1.04) drop-shadow(0 28px 58px rgba(255, 255, 255, 0.1));
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .ultraviolet .mockup-hero button {
@@ -439,6 +461,8 @@ body {
   background:
     radial-gradient(circle at 80% 45%, rgba(255, 54, 43, 0.32), transparent 34%),
     linear-gradient(120deg, #190504, #070303 72%);
+  --glow: linear-gradient(100deg, rgba(255, 54, 43, 0.32), rgba(247, 45, 157, 0.16), rgba(255, 255, 255, 0.08));
+  --glow-opacity: 0.88;
 }
 
 .red-room .mockup-hero button {
@@ -454,6 +478,8 @@ body {
   --line: rgba(255, 255, 255, 0.15);
   background:
     linear-gradient(90deg, #03080a 0%, #03080a 42%, rgba(0, 191, 255, 0.16) 100%);
+  --glow: linear-gradient(100deg, rgba(0, 212, 255, 0.34), rgba(255, 255, 255, 0.09));
+  --glow-opacity: 0.9;
 }
 
 .cyan-black .mockup-hero button {
@@ -520,6 +546,8 @@ body {
   background:
     radial-gradient(circle at 78% 45%, rgba(47, 198, 121, 0.25), transparent 36%),
     #06120d;
+  --glow: linear-gradient(100deg, rgba(47, 198, 121, 0.25), rgba(255, 255, 255, 0.1));
+  --glow-opacity: 0.82;
 }
 
 .greenroom .mockup-hero button {
@@ -537,6 +565,8 @@ body {
     radial-gradient(circle at 76% 44%, rgba(255, 186, 73, 0.28), transparent 28%),
     radial-gradient(circle at 64% 56%, rgba(247, 45, 157, 0.24), transparent 32%),
     #16111a;
+  --glow: linear-gradient(100deg, rgba(255, 186, 73, 0.28), rgba(247, 45, 157, 0.2), rgba(255, 255, 255, 0.08));
+  --glow-opacity: 0.9;
 }
 
 .sunset-chrome .mockup-header img {
@@ -545,11 +575,11 @@ body {
 }
 
 .sunset-chrome .mockup-hero > img {
-  opacity: 0.74;
-  filter: sepia(0.1) saturate(1.32) contrast(1.04) brightness(0.88);
-  mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 48%, transparent 78%);
-  mask-image: radial-gradient(circle at 50% 50%, #000 0 48%, transparent 78%);
+  opacity: 0.88;
+  filter: sepia(0.08) saturate(1.24) contrast(1.04) drop-shadow(0 28px 58px rgba(255, 186, 73, 0.14));
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .sunset-chrome .mockup-hero button {
