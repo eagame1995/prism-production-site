@@ -1,0 +1,580 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: #f4f4f4;
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.preview-page {
+  padding: 42px;
+}
+
+.preview-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.preview-intro p {
+  margin: 0;
+  color: #a7a7a7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.preview-intro h1 {
+  margin: 0;
+  font-size: clamp(36px, 6vw, 82px);
+  line-height: 0.95;
+}
+
+.variant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mockup {
+  --bg: #f7f7f5;
+  --paper: #fff;
+  --ink: #070707;
+  --muted: #686a70;
+  --line: rgba(0, 0, 0, 0.12);
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.mockup-label {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 5;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mockup-header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 30px;
+}
+
+.mockup-header img {
+  width: 185px;
+}
+
+.mockup-header nav {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mockup-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+  align-items: center;
+  min-height: 330px;
+  padding: 18px 0 40px 30px;
+}
+
+.mockup-hero div {
+  position: relative;
+  z-index: 3;
+}
+
+.mockup-hero p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mockup-hero h2 {
+  max-width: 490px;
+  margin: 0 0 18px;
+  font-size: clamp(42px, 4.7vw, 68px);
+  line-height: 0.98;
+}
+
+.mockup-hero span {
+  display: block;
+  max-width: 360px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.32;
+}
+
+.mockup-hero button {
+  min-width: 170px;
+  height: 48px;
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mockup-hero > img {
+  position: relative;
+  z-index: 2;
+  width: 118%;
+  margin-left: -6%;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 20%, #000 100%);
+}
+
+.dark {
+  --bg: #070707;
+  --paper: #101010;
+  --ink: #f6f4ef;
+  --muted: #a6a6a0;
+  --line: rgba(255, 255, 255, 0.16);
+}
+
+.dark .mockup-header img {
+  filter: invert(1) grayscale(1) contrast(1.12);
+  mix-blend-mode: screen;
+}
+
+.dark .mockup-hero > img {
+  opacity: 0.76;
+  filter: saturate(0.75) contrast(1.1);
+  mix-blend-mode: screen;
+}
+
+.paper {
+  --bg: #eee9df;
+  --paper: #f8f3e8;
+  --ink: #15130f;
+  --muted: #6f695f;
+  --line: rgba(45, 38, 26, 0.16);
+}
+
+.paper::before {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(40, 32, 18, 0.18) 0.55px, transparent 0.7px);
+  background-size: 5px 5px;
+  content: "";
+  opacity: 0.36;
+  pointer-events: none;
+}
+
+.paper .mockup-hero > img {
+  opacity: 0.5;
+  filter: grayscale(0.2) sepia(0.18) contrast(0.95);
+}
+
+.graphite {
+  --bg: #e0e1e2;
+  --paper: #f4f4f4;
+  --ink: #101214;
+  --muted: #5b6268;
+  --line: rgba(16, 18, 20, 0.16);
+  background: linear-gradient(180deg, #f3f3f3, #d8dadd);
+}
+
+.graphite .mockup-hero > img {
+  opacity: 0.72;
+  filter: grayscale(0.75) contrast(1.1);
+}
+
+.warm {
+  --bg: #fbfaf7;
+  --paper: #fffdf8;
+  --ink: #17130e;
+  --muted: #77706a;
+  --line: rgba(40, 30, 18, 0.12);
+}
+
+.warm .mockup-hero > img {
+  opacity: 0.7;
+  filter: saturate(0.82) contrast(0.98);
+}
+
+.accent {
+  --bg: #fbfbfb;
+  --paper: #fff;
+  --ink: #030303;
+  --muted: #5f626b;
+  --line: rgba(0, 0, 0, 0.12);
+  background: linear-gradient(115deg, #fbfbfb 0%, #fbfbfb 58%, #eef9ff 72%, #fff0fa 100%);
+}
+
+.accent .mockup-hero > img {
+  opacity: 0.9;
+  filter: saturate(1.28) contrast(1.03);
+}
+
+.accent .mockup-hero button {
+  background: linear-gradient(90deg, #050505, #1b1b22);
+}
+
+.film-lab {
+  --bg: #f1eee8;
+  --paper: #faf7f0;
+  --ink: #1a1814;
+  --muted: #77736c;
+  --line: rgba(40, 35, 25, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent 58%),
+    #f1eee8;
+}
+
+.film-lab .mockup-hero > img {
+  opacity: 0.62;
+  filter: saturate(0.72) contrast(0.92) sepia(0.08);
+}
+
+.film-lab .mockup-hero button {
+  background: #242018;
+  color: #faf7f0;
+}
+
+.blue-tech {
+  --bg: #eef5f8;
+  --paper: #f9fdff;
+  --ink: #061016;
+  --muted: #55656d;
+  --line: rgba(0, 40, 65, 0.13);
+  background:
+    linear-gradient(120deg, #fafdff 0%, #eef5f8 58%, #dbeef6 100%);
+}
+
+.blue-tech .mockup-hero > img {
+  opacity: 0.78;
+  filter: hue-rotate(12deg) saturate(1.15) contrast(1.02);
+}
+
+.blue-tech .mockup-hero button {
+  background: #061016;
+  color: #f9fdff;
+}
+
+.mono-art {
+  --bg: #f0f0ee;
+  --paper: #fafafa;
+  --ink: #080808;
+  --muted: #5d5d5b;
+  --line: rgba(0, 0, 0, 0.16);
+  background: #f0f0ee;
+}
+
+.mono-art .mockup-hero > img {
+  opacity: 0.64;
+  filter: grayscale(1) contrast(1.16);
+}
+
+.mono-art .mockup-header img {
+  filter: grayscale(1) contrast(1.1);
+}
+
+.ink-editorial {
+  --bg: #e8e4d8;
+  --paper: #f4f0e5;
+  --ink: #10131a;
+  --muted: #68675e;
+  --line: rgba(16, 19, 26, 0.18);
+  background:
+    linear-gradient(90deg, rgba(16, 19, 26, 0.04), transparent 32%),
+    #e8e4d8;
+}
+
+.ink-editorial .mockup-hero > img {
+  opacity: 0.58;
+  filter: grayscale(0.45) sepia(0.08) contrast(1.05);
+}
+
+.ink-editorial .mockup-hero button {
+  background: #10131a;
+  color: #f4f0e5;
+}
+
+.ivory-premium {
+  --bg: #f6f2eb;
+  --paper: #fffaf2;
+  --ink: #12100d;
+  --muted: #706c64;
+  --line: rgba(50, 38, 22, 0.13);
+  background:
+    linear-gradient(120deg, #fffaf2 0%, #f6f2eb 62%, #eef4f4 100%);
+}
+
+.ivory-premium .mockup-hero > img {
+  opacity: 0.66;
+  filter: saturate(0.9) contrast(1);
+}
+
+.ivory-premium .mockup-hero button {
+  background: #12100d;
+  color: #fffaf2;
+}
+
+.neon-noir {
+  --bg: #09070d;
+  --paper: #120f18;
+  --ink: #fbf8ff;
+  --muted: #b1a9bd;
+  --line: rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 82% 35%, rgba(247, 45, 157, 0.24), transparent 30%),
+    radial-gradient(circle at 68% 50%, rgba(10, 167, 232, 0.22), transparent 26%),
+    #09070d;
+}
+
+.neon-noir .mockup-header img {
+  filter: invert(1) grayscale(1) contrast(1.08);
+  mix-blend-mode: screen;
+}
+
+.neon-noir .mockup-hero > img {
+  opacity: 0.64;
+  filter: saturate(1.42) contrast(1.08) brightness(0.78);
+  mix-blend-mode: screen;
+  clip-path: ellipse(44% 46% at 54% 52%);
+  -webkit-mask-image: radial-gradient(ellipse at 54% 52%, #000 0 42%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 54% 52%, #000 0 42%, transparent 72%);
+}
+
+.neon-noir .mockup-hero button {
+  background: linear-gradient(90deg, #f72d9d, #0aa7e8);
+  color: #09070d;
+}
+
+.ultraviolet {
+  --bg: #12091f;
+  --paper: #1a1028;
+  --ink: #fff9ff;
+  --muted: #b8a9ce;
+  --line: rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 78% 40%, rgba(154, 92, 255, 0.38), transparent 30%),
+    radial-gradient(circle at 45% 60%, rgba(247, 45, 157, 0.18), transparent 32%),
+    #12091f;
+}
+
+.ultraviolet .mockup-header img,
+.red-room .mockup-header img,
+.cyan-black .mockup-header img,
+.greenroom .mockup-header img {
+  filter: invert(1) grayscale(1) contrast(1.08);
+  mix-blend-mode: screen;
+}
+
+.ultraviolet .mockup-hero > img,
+.red-room .mockup-hero > img,
+.cyan-black .mockup-hero > img,
+.greenroom .mockup-hero > img {
+  opacity: 0.74;
+  filter: saturate(1.2) contrast(1.08) brightness(0.86);
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 46%, transparent 76%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 0 46%, transparent 76%);
+}
+
+.ultraviolet .mockup-hero button {
+  background: #fff9ff;
+  color: #12091f;
+}
+
+.acid-lime {
+  --bg: #efff18;
+  --paper: #f7ff73;
+  --ink: #050505;
+  --muted: #3e4211;
+  --line: rgba(0, 0, 0, 0.18);
+  background:
+    linear-gradient(120deg, #efff18 0%, #efff18 52%, #f72d9d 100%);
+}
+
+.acid-lime .mockup-header img {
+  filter: grayscale(1) contrast(1.15);
+}
+
+.acid-lime .mockup-hero > img {
+  opacity: 0.64;
+  filter: grayscale(0.7) contrast(1.22);
+}
+
+.acid-lime .mockup-hero button {
+  background: #050505;
+  color: #efff18;
+}
+
+.red-room {
+  --bg: #190504;
+  --paper: #250807;
+  --ink: #fff4ee;
+  --muted: #d0a39b;
+  --line: rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 80% 45%, rgba(255, 54, 43, 0.32), transparent 34%),
+    linear-gradient(120deg, #190504, #070303 72%);
+}
+
+.red-room .mockup-hero button {
+  background: #fff4ee;
+  color: #190504;
+}
+
+.cyan-black {
+  --bg: #03080a;
+  --paper: #061014;
+  --ink: #f5feff;
+  --muted: #96b5bd;
+  --line: rgba(255, 255, 255, 0.15);
+  background:
+    linear-gradient(90deg, #03080a 0%, #03080a 42%, rgba(0, 191, 255, 0.16) 100%);
+}
+
+.cyan-black .mockup-hero button {
+  background: #00d4ff;
+  color: #03080a;
+}
+
+.brutal-white {
+  --bg: #f4f4f0;
+  --paper: #ffffff;
+  --ink: #000;
+  --muted: #4d4d4d;
+  --line: #000;
+  background:
+    linear-gradient(#e5e5e0 1px, transparent 1px),
+    linear-gradient(90deg, #e5e5e0 1px, transparent 1px),
+    #f4f4f0;
+  background-size: 28px 28px;
+}
+
+.brutal-white .mockup-header,
+.brutal-white .mockup-hero {
+  border-color: #000;
+}
+
+.brutal-white .mockup-hero > img {
+  opacity: 0.58;
+  filter: grayscale(1) contrast(1.35);
+}
+
+.brutal-white .mockup-hero button {
+  border: 2px solid #000;
+  background: #000;
+  color: #fff;
+}
+
+.hologram {
+  --bg: #f6fbff;
+  --paper: #fff;
+  --ink: #10121b;
+  --muted: #65717e;
+  --line: rgba(20, 30, 45, 0.12);
+  background:
+    radial-gradient(circle at 78% 38%, rgba(247, 45, 157, 0.15), transparent 34%),
+    radial-gradient(circle at 62% 62%, rgba(10, 167, 232, 0.16), transparent 30%),
+    linear-gradient(120deg, #ffffff, #eef9ff 60%, #fff1fb);
+}
+
+.hologram .mockup-hero > img {
+  opacity: 0.72;
+  filter: saturate(1.18) contrast(0.98);
+}
+
+.hologram .mockup-hero button {
+  background: linear-gradient(90deg, #10121b, #263142);
+}
+
+.greenroom {
+  --bg: #06120d;
+  --paper: #0b1c15;
+  --ink: #effff5;
+  --muted: #9ab7a6;
+  --line: rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle at 78% 45%, rgba(47, 198, 121, 0.25), transparent 36%),
+    #06120d;
+}
+
+.greenroom .mockup-hero button {
+  background: #effff5;
+  color: #06120d;
+}
+
+.sunset-chrome {
+  --bg: #16111a;
+  --paper: #201724;
+  --ink: #fff8ef;
+  --muted: #d6b8aa;
+  --line: rgba(255, 255, 255, 0.15);
+  background:
+    radial-gradient(circle at 76% 44%, rgba(255, 186, 73, 0.28), transparent 28%),
+    radial-gradient(circle at 64% 56%, rgba(247, 45, 157, 0.24), transparent 32%),
+    #16111a;
+}
+
+.sunset-chrome .mockup-header img {
+  filter: invert(1) grayscale(1) contrast(1.08);
+  mix-blend-mode: screen;
+}
+
+.sunset-chrome .mockup-hero > img {
+  opacity: 0.74;
+  filter: sepia(0.1) saturate(1.32) contrast(1.04) brightness(0.88);
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 48%, transparent 78%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 0 48%, transparent 78%);
+}
+
+.sunset-chrome .mockup-hero button {
+  background: linear-gradient(90deg, #ffba49, #f72d9d);
+  color: #16111a;
+}
+
+@media (max-width: 920px) {
+  .preview-page {
+    padding: 24px;
+  }
+
+  .variant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mockup-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .mockup-hero > img {
+    position: absolute;
+    right: -170px;
+    bottom: 0;
+    width: 520px;
+    opacity: 0.38;
+  }
+}
