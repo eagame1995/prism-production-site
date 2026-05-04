@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PRISM motion concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="motion-concepts.css" />
+  </head>
+  <body>
+    <main>
+      <section class="concept concept-minimal">
+        <header class="concept-nav">
+          <img src="assets/logo-transparent.png" alt="PRISM Production" />
+          <nav>
+            <a href="#work"><span>Work</span><span>Work</span></a>
+            <a href="#services"><span>Services</span><span>Services</span></a>
+            <a href="#contact"><span>Contact</span><span>Contact</span></a>
+          </nav>
+        </header>
+        <div class="hero-stage">
+          <p class="kicker reveal">Motion direction 01</p>
+          <h1 aria-label="Light. Frame. Story.">
+            <span style="--d: 0ms">Light.</span>
+            <span style="--d: 110ms">Frame.</span>
+            <span style="--d: 220ms">Story.</span>
+          </h1>
+          <p class="lead reveal">Минималистичный hero: крупная типографика, текст выплывает по строкам, визуал появляется мягким wipe-эффектом.</p>
+          <div class="actions reveal">
+            <a href="#work">Смотреть работы</a>
+            <a href="#contact">Обсудить проект</a>
+          </div>
+        </div>
+        <div class="prism-wipe" aria-hidden="true">
+          <img src="assets/hero-prism.png" alt="" />
+        </div>
+      </section>
+
+      <section class="concept concept-index" id="work">
+        <div class="section-title">
+          <p>Motion direction 02</p>
+          <h2>Живой список работ</h2>
+        </div>
+        <div class="project-index">
+          <a class="project-row" href="#">
+            <span>01</span>
+            <strong>Smooth Driving</strong>
+            <em>Advertisement</em>
+            <img src="assets/work-camera.png" alt="" />
+          </a>
+          <a class="project-row" href="#">
+            <span>02</span>
+            <strong>Frame Profile</strong>
+            <em>Brand Film</em>
+            <img src="assets/work-portrait.png" alt="" />
+          </a>
+          <a class="project-row" href="#">
+            <span>03</span>
+            <strong>Quiet Architecture</strong>
+            <em>Editorial</em>
+            <img src="assets/work-architecture.png" alt="" />
+          </a>
+          <a class="project-row" href="#">
+            <span>04</span>
+            <strong>Product Light</strong>
+            <em>Commercial</em>
+            <img src="assets/work-product.png" alt="" />
+          </a>
+        </div>
+      </section>
+
+      <section class="concept concept-marquee">
+        <div class="marquee" aria-hidden="true">
+          <div>Light / Frame / Story / Production / Commercial / Brand Film / </div>
+          <div>Light / Frame / Story / Production / Commercial / Brand Film / </div>
+        </div>
+        <div class="split-panel">
+          <p>Motion direction 03</p>
+          <h2>Типографика как motion-объект</h2>
+          <span>Блоки могут появляться через маску, строки могут ехать как титры, а сервисы превращаться в аккуратную кинетическую навигацию.</span>
+        </div>
+      </section>
+
+      <section class="concept concept-process" id="services">
+        <div class="section-title">
+          <p>Motion direction 04</p>
+          <h2>Процесс как монтажная лента</h2>
+        </div>
+        <div class="timeline">
+          <article class="reveal-card">
+            <span>01</span>
+            <h3>Brief</h3>
+            <p>Появление карточек по скроллу: спокойно, без перегруза.</p>
+          </article>
+          <article class="reveal-card">
+            <span>02</span>
+            <h3>Idea</h3>
+            <p>Линия движения может работать как монтажный таймлайн.</p>
+          </article>
+          <article class="reveal-card">
+            <span>03</span>
+            <h3>Shoot</h3>
+            <p>Фото и видео можно раскрывать через clip-path.</p>
+          </article>
+          <article class="reveal-card">
+            <span>04</span>
+            <h3>Final</h3>
+            <p>Финальный CTA выезжает как титр в конце ролика.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="concept concept-contact" id="contact">
+        <p>Motion direction 05</p>
+        <h2>Let’s make the frame move.</h2>
+        <a href="mailto:hello@prismproduction.studio">hello@prismproduction.studio</a>
+      </section>
+    </main>
+    <script src="motion-concepts.js"></script>
+  </body>
+</html>
