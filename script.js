@@ -3,7 +3,7 @@ const progress = document.querySelector("[data-progress]");
 const form = document.querySelector("[data-form]");
 const note = document.querySelector("[data-form-note]");
 const revealItems = document.querySelectorAll(
-  ".work-card, .services-grid article, .about-band > *, .process-step, .contact-copy, .contact-form"
+  ".work-card, .frame-card, .work-flow-list a, .services-grid article, .about-band > *, .process-step, .contact-copy, .contact-form"
 );
 
 const updateHeader = () => {
