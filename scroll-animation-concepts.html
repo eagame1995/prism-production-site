@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PRISM scroll animation concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="scroll-animation-concepts.css" />
+  </head>
+  <body>
+    <header class="scroll-header" data-header>
+      <a href="#top"><img src="assets/logo-transparent.png" alt="PRISM Production" /></a>
+      <nav>
+        <a href="#drop">Drop</a>
+        <a href="#invert">Invert</a>
+        <a href="#frames">Frames</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="progress" data-progress></div>
+    </header>
+
+    <main id="top">
+      <section class="hero-drop" id="drop">
+        <div class="eyebrow">Scroll direction 01</div>
+        <h1>
+          <span>Header</span>
+          <span>drops</span>
+          <span>with scroll.</span>
+        </h1>
+        <p>Шапка сначала большая и воздушная, потом мягко опускается, становится компактной и получает линию прогресса.</p>
+        <div class="scroll-hint">Scroll</div>
+      </section>
+
+      <section class="panel panel-light">
+        <div class="sticky-copy">
+          <p>Scroll direction 02</p>
+          <h2>Кадры появляются как монтажные планы.</h2>
+        </div>
+        <div class="frame-stack">
+          <article class="frame-card"><img src="assets/work-camera.png" alt="" /><span>Commercial</span></article>
+          <article class="frame-card"><img src="assets/work-portrait.png" alt="" /><span>Portrait</span></article>
+          <article class="frame-card"><img src="assets/work-architecture.png" alt="" /><span>Brand Story</span></article>
+        </div>
+      </section>
+
+      <section class="panel panel-dark" id="invert" data-theme="dark">
+        <div class="split-reveal">
+          <p>Scroll direction 03</p>
+          <h2>
+            <span>Header</span>
+            <span>changes</span>
+            <span>on dark.</span>
+          </h2>
+          <em>Когда секция темная, шапка переключается в светлый режим. Это можно сделать очень чисто и дорого.</em>
+        </div>
+      </section>
+
+      <section class="work-flow" id="frames">
+        <div class="flow-title">
+          <p>Scroll direction 04</p>
+          <h2>Работы как интерактивная лента.</h2>
+        </div>
+        <div class="flow-list">
+          <a href="#"><span>01</span><strong>Glass Product</strong><em>Commercial</em></a>
+          <a href="#"><span>02</span><strong>City Profile</strong><em>Brand Film</em></a>
+          <a href="#"><span>03</span><strong>Cold Light</strong><em>Fashion</em></a>
+          <a href="#"><span>04</span><strong>Studio Story</strong><em>Music Video</em></a>
+        </div>
+      </section>
+
+      <section class="text-cascade">
+        <p>Scroll direction 05</p>
+        <h2 data-cascade>
+          Light is not decoration. Frame is not a container. Story is the movement between them.
+        </h2>
+      </section>
+
+      <section class="contact-panel" id="contact" data-theme="dark">
+        <p>Scroll direction 06</p>
+        <h2>Let’s build the version that feels alive.</h2>
+        <a href="mailto:hello@prismproduction.studio">hello@prismproduction.studio</a>
+      </section>
+    </main>
+
+    <script src="scroll-animation-concepts.js"></script>
+  </body>
+</html>
