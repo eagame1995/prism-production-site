@@ -10,6 +10,7 @@ This project uses Git tags as return points for visual directions.
 - `v04-prism-intro` - entrance intro with prism mark, animated rays, PRISM PRODUCTION wordmark, then transition into the landing page.
 - `v05-logo-lockup-intro` - corrected intro lockup using the real logo PNG composition, scaled down by roughly 30%.
 - `v06-scroll-showreel-reveal` - separate Apple-style scroll-scrubbed showreel reveal concept with a pinned scene and clean vector prism frame.
+- `v07-edit-monitor-reveal` - the same scroll-scrubbed showreel now lands inside a cinematic editing monitor with timeline, playhead, and clip thumbnails.
 
 ## How to return
 

@@ -16,21 +16,22 @@ const updateReveal = () => {
   const height = window.innerHeight;
   const isMobile = width < 760;
 
-  const targetWidth = isMobile ? Math.min(width * 0.84, 340) : Math.min(width * 0.34, 520);
-  const targetHeight = targetWidth * 0.62;
-  const scale = (targetWidth / width) * eased + (1 - eased);
-  const targetX = isMobile ? 0 : width * 0.21;
-  const targetY = isMobile ? height * 0.16 : height * 0.04;
-  const moveX = targetX * eased;
-  const moveY = targetY * eased;
+  const targetWidth = isMobile ? Math.min(width * 0.84, 340) : Math.min(width * 0.46, 680);
+  const targetHeight = targetWidth * (isMobile ? 0.62 : 0.58);
+  const targetCenterX = isMobile ? width * 0.5 : width * 0.61;
+  const targetCenterY = isMobile ? height * 0.32 : height * 0.42;
+  const screenWidth = width + (targetWidth - width) * eased;
+  const screenHeight = height + (targetHeight - height) * eased;
+  const screenX = width * 0.5 + (targetCenterX - width * 0.5) * eased;
+  const screenY = height * 0.5 + (targetCenterY - height * 0.5) * eased;
   const radius = 24 * eased;
 
   document.documentElement.style.setProperty("--progress", progress.toFixed(4));
-  document.documentElement.style.setProperty("--scale", scale.toFixed(4));
-  document.documentElement.style.setProperty("--move-x", `${moveX.toFixed(2)}px`);
-  document.documentElement.style.setProperty("--move-y", `${moveY.toFixed(2)}px`);
+  document.documentElement.style.setProperty("--screen-width", `${screenWidth.toFixed(2)}px`);
+  document.documentElement.style.setProperty("--screen-height", `${screenHeight.toFixed(2)}px`);
+  document.documentElement.style.setProperty("--screen-x", `${screenX.toFixed(2)}px`);
+  document.documentElement.style.setProperty("--screen-y", `${screenY.toFixed(2)}px`);
   document.documentElement.style.setProperty("--radius", `${radius.toFixed(2)}px`);
-  windowEl.style.aspectRatio = `${Math.round(targetWidth)} / ${Math.round(targetHeight)}`;
 
   const activeIndex = Math.min(shots.length - 1, Math.floor(progress * shots.length));
   shots.forEach((shot, index) => shot.classList.toggle("is-active", index === activeIndex));
