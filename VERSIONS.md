@@ -9,6 +9,7 @@ This project uses Git tags as return points for visual directions.
 - `v03-prism-accent-flow` - Prism Accent color direction, higher hero prism, subtle ray glints, montage frame section, interactive work flow list.
 - `v04-prism-intro` - entrance intro with prism mark, animated rays, PRISM PRODUCTION wordmark, then transition into the landing page.
 - `v05-logo-lockup-intro` - corrected intro lockup using the real logo PNG composition, scaled down by roughly 30%.
+- `v06-scroll-showreel-reveal` - separate Apple-style scroll-scrubbed showreel reveal concept with a pinned scene and clean vector prism frame.
 
 ## How to return
 

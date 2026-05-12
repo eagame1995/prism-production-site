@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PRISM scroll showreel reveal</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="scroll-showreel-reveal.css" />
+  </head>
+  <body>
+    <header class="concept-header">
+      <a href="index.html" aria-label="PRISM Production">
+        <img src="assets/logo-transparent.png" alt="PRISM Production" />
+      </a>
+      <nav>
+        <a href="#effect">Effect</a>
+        <a href="#notes">Notes</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p>Motion direction</p>
+        <h1>Scroll showreel reveal.</h1>
+        <span>Полноэкранный шоурил при скролле собирается в фирменный кадр. Это тот же принцип, что у Apple: pinned section + scroll-scrubbed transform + masked video reveal.</span>
+      </section>
+
+      <section class="effect-stage" id="effect" data-reveal-stage>
+        <div class="reveal-sticky">
+          <div class="reveal-copy">
+            <p>PRISM effect 01</p>
+            <h2>Сначала атмосфера. Потом форма.</h2>
+          </div>
+
+          <div class="showreel-window" data-showreel-window>
+            <img class="reel-shot is-active" src="assets/work-camera.png" alt="" />
+            <img class="reel-shot" src="assets/work-portrait.png" alt="" />
+            <img class="reel-shot" src="assets/work-architecture.png" alt="" />
+            <img class="reel-shot" src="assets/work-product.png" alt="" />
+            <div class="reel-overlay">
+              <span>00:12:08</span>
+              <span>PRISM SHOWREEL</span>
+            </div>
+          </div>
+
+          <div class="prism-device" aria-hidden="true">
+            <svg class="prism-mark" viewBox="0 0 760 430" role="img">
+              <defs>
+                <linearGradient id="glass-fill" x1="210" y1="216" x2="492" y2="277" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#ffffff" stop-opacity="0.86" />
+                  <stop offset="0.42" stop-color="#e9f5ff" stop-opacity="0.42" />
+                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.12" />
+                </linearGradient>
+                <linearGradient id="left-edge" x1="116" y1="356" x2="362" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset="0.6" stop-color="#dfe8ee" />
+                  <stop offset="1" stop-color="#ffffff" />
+                </linearGradient>
+                <linearGradient id="right-edge" x1="362" y1="42" x2="628" y2="356" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset="1" stop-color="#c9d3da" />
+                </linearGradient>
+              </defs>
+              <g class="prism-rays">
+                <path d="M389 203 L760 86" />
+                <path d="M389 203 L760 126" />
+                <path d="M389 203 L760 166" />
+                <path d="M389 203 L760 206" />
+                <path d="M389 203 L760 246" />
+                <path d="M389 203 L760 286" />
+              </g>
+              <path class="prism-edge prism-edge-left" d="M114 354 L358 48" />
+              <path class="prism-edge prism-edge-right" d="M358 48 L628 354" />
+              <path class="prism-edge prism-edge-bottom" d="M114 354 L628 354" />
+              <path class="prism-edge prism-edge-cut" d="M112 354 L250 283 L315 204" />
+              <polygon class="prism-glass" points="315,204 390,198 470,246 250,283" />
+              <path class="prism-split" d="M2 206 L315 204" />
+            </svg>
+            <div class="device-glow"></div>
+          </div>
+
+          <div class="scroll-meter" aria-hidden="true">
+            <span data-meter></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="notes" id="notes">
+        <p>How it can work on the site</p>
+        <h2>Видео может сначала быть первым экраном, а потом собираться в призму, камеру или монтажный монитор.</h2>
+        <div>
+          <article>
+            <span>01</span>
+            <strong>Fullscreen showreel</strong>
+            <em>Первое впечатление строится на кадре, а не на объяснении.</em>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Scroll-scrubbed reveal</strong>
+            <em>Скролл управляет масштабом, позицией, маской и сменой кадров.</em>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Brand lockup</strong>
+            <em>В финале видео фиксируется внутри фирменной PRISM-композиции.</em>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="scroll-showreel-reveal.js"></script>
+  </body>
+</html>
