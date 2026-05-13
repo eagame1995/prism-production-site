@@ -570,6 +570,37 @@ h1 {
   line-height: 0.96;
 }
 
+.showreel-side-title {
+  position: absolute;
+  top: 38vh;
+  left: 5vw;
+  z-index: 5;
+  display: grid;
+  max-width: min(560px, 38vw);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(48px, 6vw, 116px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.88;
+  opacity: calc(max((var(--showreel-progress) - 0.48) * 2.8, 0));
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translateY(calc((1 - var(--showreel-progress)) * 52px));
+}
+
+.showreel-side-title span {
+  display: block;
+  text-shadow: 0 28px 74px rgba(0, 0, 0, 0.72);
+}
+
+.showreel-side-title span:nth-child(2) {
+  color: var(--cyan);
+}
+
+.showreel-side-title span:nth-child(3) {
+  color: rgba(255, 255, 255, 0.56);
+}
+
 .showreel-window {
   position: absolute;
   top: var(--showreel-screen-y);
@@ -1420,6 +1451,14 @@ h1 {
 
   .showreel-copy h2 {
     font-size: clamp(38px, 12.4vw, 58px);
+  }
+
+  .showreel-side-title {
+    top: 58vh;
+    left: 20px;
+    max-width: calc(100vw - 40px);
+    font-size: clamp(38px, 13vw, 62px);
+    opacity: calc(max((var(--showreel-progress) - 0.58) * 3.2, 0));
   }
 
   .showreel-monitor-topbar {
